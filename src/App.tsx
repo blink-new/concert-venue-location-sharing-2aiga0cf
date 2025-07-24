@@ -4,6 +4,7 @@ import VenueSelector from './components/VenueSelector'
 import SeatingChart from './components/SeatingChart'
 import RoomManager from './components/RoomManager'
 import FriendsList from './components/FriendsList'
+import MerchBoothTracker from './components/MerchBoothTracker'
 import { Button } from './components/ui/button'
 import { Card } from './components/ui/card'
 import { Users, MapPin, Share2 } from 'lucide-react'
@@ -228,6 +229,13 @@ function App() {
               <FriendsList
                 userLocations={userLocations}
                 currentUserId={user.id}
+              />
+            )}
+
+            {selectedVenue && currentRoom && (
+              <MerchBoothTracker
+                venueId={selectedVenue.id}
+                roomId={currentRoom.id}
               />
             )}
           </div>
