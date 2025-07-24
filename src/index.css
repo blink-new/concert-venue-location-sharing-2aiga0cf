@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 240 10% 9%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 262 83% 58%;
+    --chart-1: 262 83% 58%;
+    --chart-2: 43 96% 56%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    font-family: Inter, sans-serif;
+  }
+}
+
+/* Concert venue specific styles */
+.venue-chart {
+  background: radial-gradient(circle at center, hsl(240deg 10% 12%) 0%, hsl(240deg 10% 9%) 100%);
+}
+
+.user-marker {
+  filter: drop-shadow(0 0 8px hsl(262deg 83% 58%));
+  animation: pulse 2s infinite;
+}
+
+.friend-marker {
+  filter: drop-shadow(0 0 6px hsl(43deg 96% 56%));
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 70%;
+  }
+}
+
+.venue-section {
+  transition: all 0.2s ease;
+}
+
+.venue-section:hover {
+  fill: hsl(262deg 83% 58% / 10%);
+  stroke: hsl(262deg 83% 58%);
+  stroke-width: 2;
+}
